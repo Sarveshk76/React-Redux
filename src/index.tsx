@@ -3,13 +3,36 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import store from './app/store'
+import { Provider } from 'react-redux'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+  },
+  {
+    path: "*",
+    element: <div className='d-flex justify-content-center align-items-center m-5'>Not Found</div>,
+  }
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <Navbar/>
+        <Provider store={store}>
+        <RouterProvider router={router}/>
+        </Provider>
+      <Footer/>
   </React.StrictMode>
 );
 
