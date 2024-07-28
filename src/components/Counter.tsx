@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../feature/counterSlice';
-import { addItem, removeItem } from '../feature/foodItems';
+import { increment, decrement } from '../features/counterSlice';
+import { addItem, removeItem } from '../features/foodItems';
 
 // Define the types for your state
 interface CounterState {

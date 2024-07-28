@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterSlice from '../feature/counterSlice'
-import  foodItemsReducer  from '../feature/foodItems'
+import counterSlice from './features/counterSlice'
+import  foodItemsReducer  from './features/foodItems'
 
 export default configureStore({
   reducer: {
